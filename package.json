@@ -1,17 +1,9 @@
 {
-  "name": "web-book",
+  "name": "web-books",
   "version": "1.0.0",
-  "description": "",
+  "description": "前端开发手册",
   "keywords": [],
   "license": "MIT",
-  "bugs": {
-    "url": ""
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "authors": [],
   "maintainers": [],
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -21,20 +13,10 @@
     "lib"
   ],
   "scripts": {
-    "start": "npm run dev",
-    "dev": "dumi dev",
-    "build": "father build && yarn less:build",
-    "build:watch": "father dev",
-    "less:build": "gulp",
+    "build": "dumi build",
     "commit": "git-cz",
-    "docs:build": "dumi build",
-    "doctor": "father doctor",
-    "lint": "npm run lint:es && npm run lint:css",
-    "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
-    "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "prepare": "husky install && dumi setup",
-    "prepublishOnly": "father doctor && npm run build",
-    "pub": "git add . && changeset && changeset version && changeset publish && git push --follow-tags"
+    "dev": "dumi dev",
+    "start": "npm run dev"
   },
   "commitlint": {
     "extends": [
@@ -61,9 +43,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^5.0.0",
-    "gulp-less": "^5.0.0",
-    "gulp-rename": "^2.0.0",
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
@@ -76,6 +55,9 @@
     "dumi": "^2.2.13",
     "eslint": "^8.23.0",
     "father": "^4.1.0",
+    "gulp": "^5.0.0",
+    "gulp-less": "^5.0.0",
+    "gulp-rename": "^2.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
@@ -93,5 +75,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "authors": []
 }

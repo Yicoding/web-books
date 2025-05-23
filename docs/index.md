@@ -1,19 +1,19 @@
 ---
-title: A static site based on dumi2
+title: 前端开发手册
 hero:
-  title: Site
-  description: A static site based on dumi2
+  title: web books
+  description: 前端开发手册
   actions:
     - text: 快速开始
-      link: /components/button
+      link: /base/css/rem
 features:
-  - title: Hello
-    emoji: 🚀
-    description: Put hello description here
-  - title: World
-    emoji: 🎨
-    description: Put world description here
-  - title: '!'
+  - title: 技术文档
+    emoji: 📚
+    description: 全面的前端技术文档，帮助开发者快速掌握核心概念
+  - title: 开发指南
+    emoji: 🎯
+    description: 详细的开发指南和教程，助力开发者提升技能水平
+  - title: 最佳实践
     emoji: ✨
-    description: Put ! description here
+    description: 包含前端开发的最佳实践指南，帮助开发者写出高质量的代码
 ---

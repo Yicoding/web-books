@@ -8,3 +8,4 @@ node_modules
 .dumi/tmp-production
 .DS_Store
 dist-publish
+/site

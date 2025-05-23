@@ -9,13 +9,14 @@ const logo =
  * gitlab仓库地址为：https://gitlab.com/react-library/template/dumi2-docs
  * 那么publicPath应该设置为 /template/dumi2-docs
  */
+
 const publicPath =
-  process.env.NODE_ENV === 'production' ? `/` : '/';
+  process.env.NODE_ENV === 'production' ? `/web-books/master/` : '/';
 
 export default defineConfig({
-  outputPath: 'docs-dist',
+  outputPath: 'site',
   themeConfig: {
-    name: '文档标题',
+    name: '前端手册',
     logo,
   },
   history: {

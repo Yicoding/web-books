@@ -8,9 +8,7 @@
     "baseUrl": "./",
     "typeRoots": ["./typings"],
     "paths": {
-      "@@/*": [".dumi/tmp/*"],
-      "@xmly/landing-common-module": ["src"],
-      "@xmly/landing-common-module/*": ["src/*", "*"]
+      "@@/*": [".dumi/tmp/*"]
     }
   },
   "include": [".dumirc.ts", "src/**/*"]
