@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "typeRoots": ["./typings"],
+    "paths": {
+      "@@/*": [".dumi/tmp/*"],
+      "@xmly/landing-common-module": ["src"],
+      "@xmly/landing-common-module/*": ["src/*", "*"]
+    }
+  },
+  "include": [".dumirc.ts", "src/**/*"]
+}
