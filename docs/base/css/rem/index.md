@@ -1,6 +1,7 @@
 ---
 title: rem 适配
 order: 1
+toc: content
 group:
   title: css
   order: 1
@@ -15,6 +16,7 @@ nav:
 
 - 可能会存在兼容性问题
 - 比 js 生效更快
+- 适合静态页面，不支持动态调整
 
 ```html
 <!DOCTYPE html>
@@ -24,13 +26,29 @@ nav:
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      /* 默认字体大小 */
       html {
         font-size: 12px;
       }
 
+      /* 移动端适配 */
       @media screen and (max-width: 750px) {
         html {
           font-size: calc(100vw / 37.5);
+        }
+      }
+
+      /* 防止字体大小过小 */
+      @media screen and (max-width: 320px) {
+        html {
+          font-size: 8.53px;
+        }
+      }
+
+      /* 防止字体大小过大 */
+      @media screen and (min-width: 750px) {
+        html {
+          font-size: 20px;
         }
       }
 
@@ -49,6 +67,7 @@ nav:
 
 - 兼容性更好
 - 依赖 js 执行
+- 支持动态调整和横竖屏切换
 
 ```html
 <!DOCTYPE html>
@@ -58,9 +77,11 @@ nav:
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      /* 默认字体大小 */
       html {
         font-size: 12px;
       }
+
       .root {
         font-size: 2rem;
       }
@@ -73,17 +94,48 @@ nav:
       !(function (doc, win) {
         try {
           var docEl = doc.documentElement;
-          resizeEvt =
+          var resizeEvt =
             'orientationchange' in win ? 'orientationchange' : 'resize';
-          var recalc = function () {
+
+          // 设置 rem 函数
+          function setRem() {
             var clientWidth = docEl.clientWidth;
             if (!clientWidth) return;
-            docEl.style.fontSize =
-              10 * ((clientWidth >= 750 ? 750 : clientWidth) / 375) + 'px';
-          };
+
+            // 设置最大最小值限制
+            var maxWidth = 750;
+            var minWidth = 320;
+            var maxFontSize = 20;
+            var minFontSize = 8.53;
+
+            // 计算当前宽度对应的字体大小
+            var fontSize = 10 * (clientWidth / 375);
+
+            // 限制字体大小范围
+            fontSize = Math.min(Math.max(fontSize, minFontSize), maxFontSize);
+
+            // 设置字体大小
+            docEl.style.fontSize = fontSize + 'px';
+          }
+
+          // 监听事件
           if (!doc.addEventListener) return;
-          win.addEventListener(resizeEvt, recalc, false);
-          doc.addEventListener('DOMContentLoaded', recalc, false);
+          win.addEventListener(resizeEvt, setRem, false);
+          doc.addEventListener('DOMContentLoaded', setRem, false);
+
+          // 页面显示时重新计算
+          win.addEventListener(
+            'pageshow',
+            function (e) {
+              if (e.persisted) {
+                setRem();
+              }
+            },
+            false,
+          );
+
+          // 初始化
+          setRem();
         } catch (error) {
           console.log('计算rem error: ', error);
         }
