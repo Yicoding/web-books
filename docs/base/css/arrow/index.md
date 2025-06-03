@@ -1,6 +1,6 @@
 ---
-title: css绘制箭头
-order: 2
+title: css 绘制箭头
+order: 3
 toc: content
 group:
   title: css
@@ -27,6 +27,9 @@ CSS 绘制箭头有多种实现方式，每种方式都有其适用场景。以�
     <meta charset="UTF-8" />
     <title>CSS Arrow - Simple</title>
     <style>
+      div {
+        margin: 10px;
+      }
       .arrow {
         display: inline-block;
         width: 10px;
@@ -87,6 +90,9 @@ CSS 绘制箭头有多种实现方式，每种方式都有其适用场景。以�
     <meta charset="UTF-8" />
     <title>CSS Arrow</title>
     <style>
+      div {
+        margin: 10px;
+      }
       /* 基础箭头 */
       .arrow {
         position: relative;
