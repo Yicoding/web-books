@@ -1,0 +1,49 @@
+.parant2 {
+  div {
+    margin: 20px;
+  }
+}
+
+/* 基础箭头 */
+.arrow2 {
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+
+.arrow2::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+/* 向上箭头 */
+.arrow-up2::before {
+  transform: rotate(-45deg);
+  top: 0;
+  left: 0;
+}
+
+/* 向下箭头 */
+.arrow-down2::before {
+  transform: rotate(135deg);
+  top: 0;
+  left: 0;
+}
+
+/* 向左箭头 */
+.arrow-left2::before {
+  transform: rotate(-135deg);
+  top: 0;
+  left: 0;
+}
+
+/* 向右箭头 */
+.arrow-right2::before {
+  transform: rotate(45deg);
+  top: 0;
+  left: 0;
+}

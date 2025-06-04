@@ -1,0 +1,92 @@
+div {
+  margin: 10px 0;
+}
+
+/* 全边框 */
+.border-1px {
+  position: relative;
+}
+
+.border-1px::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: left top;
+  box-sizing: border-box;
+  border: 1px solid #488fec;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* 单边框 */
+.border-top-1px {
+  position: relative;
+}
+
+.border-top-1px::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 1px;
+  transform: scale(0.5);
+  transform-origin: left top;
+  background: #488fec;
+  pointer-events: none;
+}
+
+.border-bottom-1px {
+  position: relative;
+}
+
+.border-bottom-1px::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 1px;
+  transform: scale(0.5);
+  transform-origin: left bottom;
+  background: #488fec;
+  pointer-events: none;
+}
+
+.border-left-1px {
+  position: relative;
+}
+
+.border-left-1px::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: left top;
+  background: #488fec;
+  pointer-events: none;
+}
+
+.border-right-1px {
+  position: relative;
+}
+
+.border-right-1px::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: right top;
+  background: #488fec;
+  pointer-events: none;
+}

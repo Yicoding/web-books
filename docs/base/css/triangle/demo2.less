@@ -1,0 +1,48 @@
+.parant2 {
+  div {
+    margin: 10px;
+  }
+}
+
+/* 基础三角形 */
+.triangle2 {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.triangle2::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+}
+
+/* 向上三角形 */
+.triangle-up2::before {
+  border-bottom-color: #000;
+  top: 0;
+  left: 0;
+}
+
+/* 向下三角形 */
+.triangle-down2::before {
+  border-top-color: #000;
+  top: 0;
+  left: 0;
+}
+
+/* 向左三角形 */
+.triangle-left2::before {
+  border-right-color: #000;
+  top: 0;
+  left: 0;
+}
+
+/* 向右三角形 */
+.triangle-right2::before {
+  border-left-color: #000;
+  top: 0;
+  left: 0;
+}

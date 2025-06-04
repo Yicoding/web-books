@@ -20,50 +20,21 @@ CSS 绘制三角形有多种实现方式，每种方式都有其适用场景。�
 
 通过设置边框和透明色来创建三角形。
 
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <title>CSS Triangle - Simple</title>
-    <style>
-      div {
-        margin: 10px;
-      }
-      .triangle {
-        width: 0;
-        height: 0;
-        border: 10px solid transparent;
-      }
+```jsx
+/**
+ * defaultShowCode: true
+ */
+import React from 'react';
+import './demo1.less';
 
-      /* 向上三角形 */
-      .triangle-up {
-        border-bottom-color: #000;
-      }
-
-      /* 向下三角形 */
-      .triangle-down {
-        border-top-color: #000;
-      }
-
-      /* 向左三角形 */
-      .triangle-left {
-        border-right-color: #000;
-      }
-
-      /* 向右三角形 */
-      .triangle-right {
-        border-left-color: #000;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="triangle triangle-up"></div>
-    <div class="triangle triangle-down"></div>
-    <div class="triangle triangle-left"></div>
-    <div class="triangle triangle-right"></div>
-  </body>
-</html>
+export default () => (
+  <div className="parant">
+    <div className="triangle triangle-up"></div>
+    <div className="triangle triangle-down"></div>
+    <div className="triangle triangle-left"></div>
+    <div className="triangle triangle-right"></div>
+  </div>
+);
 ```
 
 ### 特点
@@ -78,67 +49,21 @@ CSS 绘制三角形有多种实现方式，每种方式都有其适用场景。�
 
 通过伪元素来创建三角形。
 
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <title>CSS Triangle</title>
-    <style>
-      div {
-        margin: 10px;
-      }
-      /* 基础三角形 */
-      .triangle {
-        position: relative;
-        width: 20px;
-        height: 20px;
-      }
+```jsx
+/**
+ * defaultShowCode: true
+ */
+import React from 'react';
+import './demo2.less';
 
-      .triangle::before {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 0;
-        border: 10px solid transparent;
-      }
-
-      /* 向上三角形 */
-      .triangle-up::before {
-        border-bottom-color: #000;
-        top: 0;
-        left: 0;
-      }
-
-      /* 向下三角形 */
-      .triangle-down::before {
-        border-top-color: #000;
-        top: 0;
-        left: 0;
-      }
-
-      /* 向左三角形 */
-      .triangle-left::before {
-        border-right-color: #000;
-        top: 0;
-        left: 0;
-      }
-
-      /* 向右三角形 */
-      .triangle-right::before {
-        border-left-color: #000;
-        top: 0;
-        left: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="triangle triangle-up"></div>
-    <div class="triangle triangle-down"></div>
-    <div class="triangle triangle-left"></div>
-    <div class="triangle triangle-right"></div>
-  </body>
-</html>
+export default () => (
+  <div className="parant2">
+    <div className="triangle2 triangle-up2"></div>
+    <div className="triangle2 triangle-down2"></div>
+    <div className="triangle2 triangle-left2"></div>
+    <div className="triangle2 triangle-right2"></div>
+  </div>
+);
 ```
 
 ### 特点

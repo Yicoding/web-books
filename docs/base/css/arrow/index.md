@@ -20,55 +20,21 @@ CSS 绘制箭头有多种实现方式，每种方式都有其适用场景。以�
 
 通过设置边框和旋转来创建简洁的空心箭头。
 
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <title>CSS Arrow - Simple</title>
-    <style>
-      div {
-        margin: 10px;
-      }
-      .arrow {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        border: 2px solid #000;
-      }
+```jsx
+/**
+ * defaultShowCode: true
+ */
+import React from 'react';
+import './demo1.less';
 
-      /* 向上箭头 */
-      .arrow-up {
-        border-width: 2px 2px 0 0;
-        transform: rotate(-45deg);
-      }
-
-      /* 向下箭头 */
-      .arrow-down {
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-      }
-
-      /* 向左箭头 */
-      .arrow-left {
-        border-width: 2px 0 0 2px;
-        transform: rotate(-45deg);
-      }
-
-      /* 向右箭头 */
-      .arrow-right {
-        border-width: 0 0 2px 2px;
-        transform: rotate(45deg);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="arrow arrow-up"></div>
-    <div class="arrow arrow-down"></div>
-    <div class="arrow arrow-left"></div>
-    <div class="arrow arrow-right"></div>
-  </body>
-</html>
+export default () => (
+  <div className="parant">
+    <div className="arrow arrow-up"></div>
+    <div className="arrow arrow-down"></div>
+    <div className="arrow arrow-left"></div>
+    <div className="arrow arrow-right"></div>
+  </div>
+);
 ```
 
 ### 特点
@@ -83,68 +49,21 @@ CSS 绘制箭头有多种实现方式，每种方式都有其适用场景。以�
 
 通过伪元素来创建空心箭头。
 
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <title>CSS Arrow</title>
-    <style>
-      div {
-        margin: 10px;
-      }
-      /* 基础箭头 */
-      .arrow {
-        position: relative;
-        width: 10px;
-        height: 10px;
-      }
+```jsx
+/**
+ * defaultShowCode: true
+ */
+import React from 'react';
+import './demo2.less';
 
-      .arrow::before {
-        content: '';
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-top: 2px solid #000;
-        border-right: 2px solid #000;
-      }
-
-      /* 向上箭头 */
-      .arrow-up::before {
-        transform: rotate(-45deg);
-        top: 0;
-        left: 0;
-      }
-
-      /* 向下箭头 */
-      .arrow-down::before {
-        transform: rotate(135deg);
-        top: 0;
-        left: 0;
-      }
-
-      /* 向左箭头 */
-      .arrow-left::before {
-        transform: rotate(-135deg);
-        top: 0;
-        left: 0;
-      }
-
-      /* 向右箭头 */
-      .arrow-right::before {
-        transform: rotate(45deg);
-        top: 0;
-        left: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="arrow arrow-up"></div>
-    <div class="arrow arrow-down"></div>
-    <div class="arrow arrow-left"></div>
-    <div class="arrow arrow-right"></div>
-  </body>
-</html>
+export default () => (
+  <div className="parant2">
+    <div className="arrow2 arrow-up2"></div>
+    <div className="arrow2 arrow-down2"></div>
+    <div className="arrow2 arrow-left2"></div>
+    <div className="arrow2 arrow-right2"></div>
+  </div>
+);
 ```
 
 ### 特点

@@ -1,5 +1,5 @@
 ---
-title: 1像素边框
+title: 1 像素边框
 order: 2
 toc: content
 group:
@@ -18,201 +18,66 @@ nav:
 
 使用伪元素配合 transform: scale(0.5) 将边框缩小一半，实现 0.5px 的效果。
 
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1px border solution</title>
-    <style>
-      div {
-        margin: 10px 0;
-      }
+```jsx
+/**
+ * defaultShowCode: true
+ */
+import React from 'react';
+import './demo1.less';
 
-      /* 全边框 */
-      .border-1px {
-        position: relative;
-      }
-
-      .border-1px::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 200%;
-        height: 200%;
-        transform: scale(0.5);
-        transform-origin: left top;
-        box-sizing: border-box;
-        border: 1px solid #000;
-        border-radius: 4px;
-      }
-
-      /* 单边框 */
-      .border-top-1px {
-        position: relative;
-      }
-
-      .border-top-1px::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 200%;
-        height: 1px;
-        transform: scale(0.5);
-        transform-origin: left top;
-        background: #000;
-      }
-
-      .border-bottom-1px {
-        position: relative;
-      }
-
-      .border-bottom-1px::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 200%;
-        height: 1px;
-        transform: scale(0.5);
-        transform-origin: left bottom;
-        background: #000;
-      }
-
-      .border-left-1px {
-        position: relative;
-      }
-
-      .border-left-1px::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 1px;
-        height: 200%;
-        transform: scale(0.5);
-        transform-origin: left top;
-        background: #000;
-      }
-
-      .border-right-1px {
-        position: relative;
-      }
-
-      .border-right-1px::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 1px;
-        height: 200%;
-        transform: scale(0.5);
-        transform-origin: right top;
-        background: #000;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="border-1px">全边框</div>
-    <div class="border-top-1px">上边框</div>
-    <div class="border-bottom-1px">下边框</div>
-    <div class="border-left-1px">左边框</div>
-    <div class="border-right-1px">右边框</div>
-  </body>
-</html>
+export default () => (
+  <div>
+    <div className="border-1px">全边框</div>
+    <div className="border-top-1px">上边框</div>
+    <div className="border-bottom-1px">下边框</div>
+    <div className="border-left-1px">左边框</div>
+    <div className="border-right-1px">右边框</div>
+  </div>
+);
 ```
 
 ## 方案二：使用 box-shadow
 
 使用 box-shadow 模拟边框，可以精确控制边框的粗细。
 
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1px border solution</title>
-    <style>
-      div {
-        margin: 10px 0;
-      }
+```jsx
+/**
+ * defaultShowCode: true
+ */
+import React from 'react';
+import './demo2.less';
 
-      /* 全边框 */
-      .border-shadow {
-        box-shadow: 0 0 0 0.5px #000;
-      }
-
-      /* 单边框 */
-      .border-top {
-        box-shadow: 0 -0.5px 0 0 #000;
-      }
-
-      .border-bottom {
-        box-shadow: 0 0.5px 0 0 #000;
-      }
-
-      .border-left {
-        box-shadow: -0.5px 0 0 0 #000;
-      }
-
-      .border-right {
-        box-shadow: 0.5px 0 0 0 #000;
-      }
-
-      /* 多边框组合 */
-      .border-top-bottom {
-        box-shadow: 0 -0.5px 0 0 #000, 0 0.5px 0 0 #000;
-      }
-
-      .border-left-right {
-        box-shadow: -0.5px 0 0 0 #000, 0.5px 0 0 0 #000;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="border-shadow">全边框</div>
-    <div class="border-top">上边框</div>
-    <div class="border-bottom">下边框</div>
-    <div class="border-left">左边框</div>
-    <div class="border-right">右边框</div>
-    <div class="border-top-bottom">上下边框</div>
-    <div class="border-left-right">左右边框</div>
-  </body>
-</html>
+export default () => (
+  <div>
+    <div className="border-shadow">全边框</div>
+    <div className="border-top">上边框</div>
+    <div className="border-bottom">下边框</div>
+    <div className="border-left">左边框</div>
+    <div className="border-right">右边框</div>
+    <div className="border-top-bottom">上下边框</div>
+    <div className="border-left-right">左右边框</div>
+  </div>
+);
 ```
 
 ## 方案三：使用 div + transform
 
 使用 div 元素设置 1px 高度，然后通过 transform: scaleY(0.5) 实现 0.5px 边框。
 
-```html
-<!DOCTYPE html>
-<html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1px border solution</title>
-    <style>
-      div {
-        margin: 10px 0;
-      }
-      .border-div-single {
-        height: 1px;
-        background: #000;
-        transform: scaleY(0.5);
-      }
-    </style>
-  </head>
-  <body>
+```jsx
+/**
+ * defaultShowCode: true
+ */
+import React from 'react';
+import './demo3.less';
+
+export default () => (
+  <div>
     <div>item</div>
-    <div class="border-div-single"></div>
+    <div className="border-div-single"></div>
     <div>item</div>
-  </body>
-</html>
+  </div>
+);
 ```
 
 ## 各方案对比
