@@ -4,7 +4,7 @@ order: 1
 toc: content
 group:
   title: js
-  order: 1
+  order: 2
 nav:
   title: 基础
   order: 1
