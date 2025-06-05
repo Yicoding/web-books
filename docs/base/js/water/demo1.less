@@ -1,24 +1,24 @@
-// demo1.less
-.columns-layout-container {
-  display: flex;
-  gap: 16px;
+.waterfall-layout-container {
   padding: 16px;
   background-color: #f5f5f5;
+  overflow: hidden;
 }
 
-.columns-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.waterfall-column {
+  float: left;
+  width: calc((100% - 16px) / 2);
+
+  &:first-child {
+    margin-right: 16px;
+  }
 }
 
-.columns-card {
+.waterfall-card {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 10%);
   padding: 16px;
-  break-inside: avoid;
+  margin-bottom: 16px;
 
   img {
     width: 100%;
