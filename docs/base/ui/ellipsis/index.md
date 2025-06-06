@@ -3,7 +3,7 @@ title: css 实现文字省略号
 order: 5
 toc: content
 group:
-  title: css
+  title: ui
   order: 1
 nav:
   title: 基础

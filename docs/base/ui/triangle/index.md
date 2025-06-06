@@ -3,7 +3,7 @@ title: css 绘制三角形
 order: 4
 toc: content
 group:
-  title: css
+  title: ui
   order: 1
 nav:
   title: 基础

@@ -1,9 +1,9 @@
 ---
 title: 瀑布布局
-order: 2
+order: 7
 toc: content
 group:
-  title: js
+  title: ui
   order: 2
 nav:
   title: 基础

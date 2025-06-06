@@ -3,7 +3,7 @@ title: 居中布局
 order: 7
 toc: content
 group:
-  title: css
+  title: ui
   order: 1
 nav:
   title: 基础

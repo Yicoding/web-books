@@ -3,7 +3,7 @@ title: box-shadow
 order: 6
 toc: content
 group:
-  title: css
+  title: ui
   order: 1
 nav:
   title: 基础

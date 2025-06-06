@@ -3,7 +3,7 @@ title: rem 适配
 order: 1
 toc: content
 group:
-  title: css
+  title: ui
   order: 1
 nav:
   title: 基础

@@ -3,7 +3,7 @@ title: 1 像素边框
 order: 2
 toc: content
 group:
-  title: css
+  title: ui
   order: 1
 nav:
   title: 基础

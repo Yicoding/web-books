@@ -23,12 +23,18 @@ nav:
 ## 使用方法
 
 ```js
-// 检测是否存在安全底栏
-const hasSafeArea = checkSafeBottomArea();
-console.log('是否存在安全底栏:', hasSafeArea);
+// 方案一：基于CSS特性和屏幕尺寸检测
+const hasSafeArea1 = checkSafeBottomArea();
+console.log('方案一检测结果:', hasSafeArea1);
+
+// 方案二：基于屏幕长宽比检测
+const hasSafeArea2 = hasSafeArea();
+console.log('方案二检测结果:', hasSafeArea2);
 ```
 
 ## 实现代码
+
+### 方案一：基于 CSS 特性和屏幕尺寸检测
 
 ```js
 function checkSafeBottomArea() {
@@ -63,11 +69,33 @@ function checkSafeBottomArea() {
 }
 ```
 
+### 方案二：基于屏幕长宽比检测
+
+```js
+function hasSafeArea() {
+  // Android 设备通常不需要安全区域处理
+  if (deviceType === 'android') return false;
+
+  // 通过屏幕长宽比判断
+  const aspectRatio = window?.screen?.height / window?.screen?.width;
+  return aspectRatio > 2;
+}
+```
+
 ## 实现原理
+
+### 方案一原理
 
 1. 使用 `env(safe-area-inset-bottom)` 检测底部安全区域高度
 2. 通过屏幕尺寸判断是否是 iPhone X 及以上机型
 3. 根据检测结果返回布尔值
+
+### 方案二原理
+
+1. 首先排除 Android 设备（大部分 Android 设备不需要安全区域处理）
+2. 计算屏幕的长宽比（高度/宽度）
+3. 具有安全区域的设备通常屏幕长宽比大于 2（如 iPhone X 系列）
+4. 通过长宽比阈值判断是否存在安全区域
 
 ## 注意事项
 
